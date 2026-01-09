@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Cine Plus TV 📺</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="🎬 Cine Plus TV — Disfruta trailers actualizados, streaming legal y monetización con AdSense y Monetag. Compatible con Android.">
+<meta name="description" content="🎬 Cine Plus TV — Disfruta trailers actualizados, streaming legal y monetización con AdSense y Monetag.">
 <meta name="keywords" content="cine, películas, trailers, streaming, Cine Plus TV, YouTube legal, gratis">
 <meta name="author" content="Cine Plus TV">
 
@@ -19,8 +19,7 @@ gtag('config', 'G-2N41SSDHYQ');
 
 <!-- 🔸 Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-7859862485920488">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7859862485920488"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7859862485920488" crossorigin="anonymous"></script>
 
 <!-- 🔸 Monetag -->
 <meta name="monetag" content="16ff179b5ba5c5423d6a1845b278910f">
@@ -75,14 +74,49 @@ header {
   flex-direction: column;
   z-index: 9999;
 }
-#player { width: 100%; max-width: 900px; height: 60vh; }
+#player-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 60vh;
+}
+#player {
+  width: 100%;
+  height: 100%;
+}
+
+/* 🔸 Overlay de anuncio dentro del video */
+#video-ad {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20,20,20,0.95);
+  padding: 8px;
+  border-radius: 6px;
+  display: none;
+  z-index: 10000;
+  width: 300px;
+  max-width: 80%;
+  text-align: center;
+}
+#video-ad button {
+  margin-top: 6px;
+  background: #e50914;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .controls { margin-top: 10px; display: flex; gap: 10px; }
 .controls button {
   background: #e50914; border: none; padding: 10px 20px;
   color: #fff; border-radius: 6px; font-size: 16px; cursor: pointer;
 }
 @media (max-width: 600px) {
-  #player { height: 45vh; }
+  #player-container { height: 45vh; }
   .logo { font-size: 20px; }
 }
 
@@ -112,20 +146,7 @@ footer a:hover { text-decoration: underline; }
   cursor: pointer;
 }
 
-/* 🔥 Banner flotante inferior */
-#floating-ad {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #111;
-  text-align: center;
-  padding: 5px 0;
-  z-index: 9998;
-  border-top: 2px solid #e50914;
-}
-
-/* 💬 Popup de anuncio */
+/* 💬 Popup anuncio */
 #ad-popup {
   display: none;
   position: fixed;
@@ -154,40 +175,38 @@ footer a:hover { text-decoration: underline; }
 
 <body>
 
-<header>
-  <div class="logo">🎬 Cine Plus TV</div>
-</header>
+<header><div class="logo">🎬 Cine Plus TV</div></header>
 
 <!-- 🔝 ANUNCIO SUPERIOR -->
 <div style="text-align:center;margin:10px 0;">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7859862485920488"
-     data-ad-slot="6600521134"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7859862485920488"
+       data-ad-slot="6600521134"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
 <div id="movies"></div>
 <div id="sentinel"></div>
 
 <div id="tv">
-  <div id="player"></div>
-  <div class="controls">
-    <button onclick="skip()">⏭ Siguiente</button>
+  <div id="player-container">
+    <div id="player"></div>
+    <div id="video-ad">
+      <p>🎬 Publicidad:</p>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7859862485920488"
+           data-ad-slot="2277406593"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      <button onclick="closeVideoAd()">Cerrar</button>
+    </div>
   </div>
-</div>
-
-<!-- 📢 ANUNCIO INTERMEDIO -->
-<div style="text-align:center;margin:20px 0;">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7859862485920488"
-     data-ad-slot="7850112417"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  <div class="controls"><button onclick="skip()">⏭ Siguiente</button></div>
 </div>
 
 <!-- 🍪 COOKIES -->
@@ -196,33 +215,24 @@ footer a:hover { text-decoration: underline; }
   <button onclick="acceptCookies()">Aceptar</button>
 </div>
 
-<!-- 🪧 BANNER FLOTANTE INFERIOR -->
-<div id="floating-ad">
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:100%;height:60px"
-       data-ad-client="ca-pub-7859862485920488"
-       data-ad-slot="3410563242"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-</div>
-     
-
+<!-- 💬 POPUP -->
 <div id="ad-popup">
+  <p>🎁 Mira este anuncio para seguir disfrutando contenido gratuito:</p>
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-7859862485920488"
-       data-ad-slot="2277406593"
+       data-ad-slot="7850112417"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   <button onclick="closePopup()">Cerrar</button>
 </div>
 
-<!-- ⚖️ FOOTER -->
 <footer>
   <p>© 2025 Cine Plus TV. Todos los derechos reservados.</p>
-  <a href="#privacidad" onclick="alert('Cumplimos con GDPR y CCPA. No almacenamos datos personales.');">Privacidad</a> |
-  <a href="#terminos" onclick="alert('Cine Plus TV muestra trailers públicos de YouTube y TMDB.');">Términos</a> |
-  <a href="#dmca" onclick="alert('Para reclamos DMCA: cineplus.contact@gmail.com');">DMCA / Contacto</a>
+  <a href="#privacidad" onclick="alert('Cumplimos con GDPR y CCPA.');">Privacidad</a> |
+  <a href="#terminos" onclick="alert('Mostramos trailers públicos de YouTube.');">Términos</a> |
+  <a href="#dmca" onclick="alert('DMCA: cineplus.contact@gmail.com');">DMCA / Contacto</a>
 </footer>
 
 <!-- 📽️ SCRIPT PRINCIPAL -->
@@ -232,87 +242,82 @@ const OMDB_KEY = "d58f0933";
 const TMDB_KEY = "a75df45f5957e88b88043e6e9558b941";
 let playlist = [], page = 1, index = 0, player;
 
-// ✅ Crear reproductor con detección de errores
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     playerVars: { autoplay: 1, controls: 1, rel: 0, mute: 1, playsinline: 1 },
-    events: { 
+    events: {
       onStateChange: e => { if (e.data === 0) next(); },
-      onError: () => { console.warn("🎬 Video bloqueado, saltando..."); next(); }
+      onError: () => { console.warn("Video bloqueado, saltando..."); next(); }
     }
   });
 }
 
-function play(id) { player.loadVideoById(id); }
-function skip() { next(); }
+function play(id){ player.loadVideoById(id); }
+function skip(){ next(); }
 
-// ✅ Siguiente video
-async function next() {
+async function next(){
   index++;
-  if (index >= playlist.length - 1) await load();
+  if(index >= playlist.length - 1) await load();
   playTrailer(playlist[index]);
 }
 
-// ✅ Cargar trailer
-async function playTrailer(imdb) {
-  try {
+async function playTrailer(imdb){
+  try{
     const f = await fetch(`https://api.themoviedb.org/3/find/${imdb}?api_key=${TMDB_KEY}&external_source=imdb_id`);
     const d = await f.json();
-    if (!d.movie_results[0]) return next();
+    if(!d.movie_results[0]) return next();
 
     const v = await fetch(`https://api.themoviedb.org/3/movie/${d.movie_results[0].id}/videos?api_key=${TMDB_KEY}`);
     const vd = await v.json();
-    const t = vd.results.find(x => x.site === "YouTube" && x.type === "Trailer");
-    if (t) play(t.key);
+    const t = vd.results.find(x => x.site==="YouTube" && x.type==="Trailer");
+    if(t) play(t.key);
     else next();
-  } catch (e) {
-    console.error("Error cargando trailer:", e);
-    next();
-  }
+  }catch(e){ console.error(e); next(); }
 }
 
-// ✅ Scroll infinito
-async function load() {
+async function load(){
   const r = await fetch(`https://www.omdbapi.com/?apikey=${OMDB_KEY}&s=movie&type=movie&page=${page}`);
   const d = await r.json();
-  if (d.Response === "True") {
-    d.Search.forEach(m => {
+  if(d.Response==="True"){
+    d.Search.forEach(m=>{
       playlist.push(m.imdbID);
-      const c = document.createElement("div");
-      c.className = "card";
-      c.innerHTML = `<img src="${m.Poster}" alt="${m.Title}"><p>${m.Title}</p>`;
-      c.onclick = () => { index = playlist.indexOf(m.imdbID); playTrailer(m.imdbID); };
+      const c=document.createElement("div");
+      c.className="card";
+      c.innerHTML=`<img src="${m.Poster}" alt="${m.Title}"><p>${m.Title}</p>`;
+      c.onclick=()=>{index=playlist.indexOf(m.imdbID); playTrailer(m.imdbID);};
       movies.appendChild(c);
     });
     page++;
   }
 }
-new IntersectionObserver(e => e[0].isIntersecting && load()).observe(sentinel);
+new IntersectionObserver(e=>e[0].isIntersecting&&load()).observe(sentinel);
 
-// ✅ Auto-reproducción inicial
-window.onload = async () => {
-  await load();
-  setTimeout(() => playTrailer(playlist[0]), 3000);
-};
+window.onload=async()=>{ await load(); setTimeout(()=>playTrailer(playlist[0]),3000); };
 
 // 🍪 Cookies
-function acceptCookies(){
-  document.getElementById('cookie-banner').style.display='none';
-  localStorage.setItem('cookiesAccepted','yes');
-}
-if(localStorage.getItem('cookiesAccepted')) document.getElementById('cookie-banner').style.display='none';
+function acceptCookies(){document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookiesAccepted','yes');}
+if(localStorage.getItem('cookiesAccepted'))document.getElementById('cookie-banner').style.display='none';
 
-// 💬 Popup de anuncio cada 80 segundos
-function showPopup(){
-  document.getElementById('ad-popup').style.display='block';
+// 💬 Popup
+function showPopup(){document.getElementById('ad-popup').style.display='block';}
+function closePopup(){document.getElementById('ad-popup').style.display='none';}
+setInterval(showPopup,120000);
+
+// 🎥 Anuncio dentro del video
+function showVideoAd(){
+  document.getElementById('video-ad').style.display='block';
+  (adsbygoogle=window.adsbygoogle||[]).push({});
+  setTimeout(closeVideoAd,15000);
 }
-function closePopup(){
-  document.getElementById('ad-popup').style.display='none';
-}
-setInterval(showPopup, 90000);
+function closeVideoAd(){document.getElementById('video-ad').style.display='none';}
+
+// Mostrar anuncio en video cada 60 segundos
+setInterval(showVideoAd,60000);
 </script>
 
 </body>
 </html>
+
+
 
 
