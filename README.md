@@ -1,1 +1,19 @@
-# -TV-CINE-PLUS- ![dreamina-2025-08-09-4826-🎬 CINE PLUS – Donde viven todas las his](https://github.com/user-attachments/assets/ef16e235-abf6-4d57-9227-c1fc8bafb517)
+# 🎬 Cine Plus TV
+
+**Cine Plus TV** es una plataforma gratuita que ofrece trailers de películas y contenido audiovisual legal mediante la API de YouTube y TMDB.
+
+🌐 **Sitio web:** [https://davidappleuribe.github.io/TV-CINE-PLUS](https://davidappleuribe.github.io/TV-CINE-PLUS)
+
+## 🚀 Funciones
+- Reproductor automático de trailers (YouTube)
+- Integración con TMDB y OMDB
+- Compatible con móviles Android e iOS
+- Monetización activa con **Google AdSense**
+- Análisis de tráfico con **Google Analytics**
+
+## 🧾 Políticas
+Este sitio no almacena ni distribuye contenido protegido.  
+Cumple con las normas **DMCA**, **GDPR** y **CCPA**.
+
+📩 Contacto: cineplus. davidappleuribe@gmail.com
+
