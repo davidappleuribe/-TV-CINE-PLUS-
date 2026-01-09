@@ -2,7 +2,7 @@
 
 **Cine Plus TV** es una plataforma gratuita que ofrece trailers de películas y contenido audiovisual legal mediante la API de YouTube y TMDB.
 
-🌐 **Sitio web:** [https://davidappleuribe.github.io/TV-CINE-PLUS](https://davidappleuribe.github.io/TV-CINE-PLUS)
+🌐 **Sitio web:** [https://davidappleuribe.github.io/-TV-CINE-PLUS-/](https://davidappleuribe.github.io/-TV-CINE-PLUS-/)
 
 ## 🚀 Funciones
 - Reproductor automático de trailers (YouTube)
