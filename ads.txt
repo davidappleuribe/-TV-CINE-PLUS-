@@ -1,1 +1,6 @@
+# ads.txt — Archivo de autorización de vendedores de anuncios
+# Cine Plus TV © 2025
+# Este archivo indica qué empresas están autorizadas a vender inventario publicitario en este sitio.
+
 google.com, pub-7859862485920488, DIRECT, f08c47fec0942fa0
+
