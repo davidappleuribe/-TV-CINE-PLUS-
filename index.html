@@ -1,77 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-  <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-7859862485920488">
   <title>Cine Plus TV 📺</title>
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7859862485920488"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-7859862485920488"
-     data-ad-slot="8222173088"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7859862485920488"
-     crossorigin="anonymous"></script>
-  
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/50933862.js"></script>
-<!-- End of HubSpot Embed Code -->
-  
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'/metrics/?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','');</script>
-<!-- End Google Tag Manager -->
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7859862485920488"
-     crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-7859862485920488">
 
-
-  <!-- ✅ Activar anuncios automáticos -->
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-7859862485920488",
-      enable_page_level_ads: true
-    });
-  </script>
+  <!-- ✅ Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7859862485920488" crossorigin="anonymous"></script>
 
   <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2N41SSDHYQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-2N41SSDHYQ');
   </script>
 
-  <!-- ✅ AMP Auto Ads Script -->
+  <!-- ✅ AMP Auto Ads -->
   <script async custom-element="amp-auto-ads"
-          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2N41SSDHYQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- ✅ HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/50933862.js"></script>
 
-  gtag('config', 'G-2N41SSDHYQ');
-</script>
-  
   <style>
-    body {margin:0;background:#000;color:#fff;font-family:Arial}
-    header {background:#111;padding:15px;position:sticky;top:0;z-index:10}
-    .logo {color:#e50914;font-size:24px;font-weight:bold;text-align:center}
+    body { margin:0; background:#000; color:#fff; font-family:Arial }
+    header { background:#111; padding:15px; position:sticky; top:0; z-index:10 }
+    .logo { color:#e50914; font-size:24px; font-weight:bold; text-align:center }
 
     #movies {
       display:grid;
@@ -79,10 +36,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gap:15px;
       padding:20px
     }
-    .card {background:#1c1c1c;border-radius:10px;cursor:pointer;transition:.2s}
-    .card:hover {transform:scale(1.05);}
-    .card img {width:100%;height:230px;object-fit:cover}
-    .card p {text-align:center;padding:8px;font-size:14px}
+    .card {
+      background:#1c1c1c; border-radius:10px; cursor:pointer; transition:.2s;
+    }
+    .card:hover { transform:scale(1.05); }
+    .card img { width:100%; height:230px; object-fit:cover; border-radius:10px 10px 0 0 }
+    .card p { text-align:center; padding:8px; font-size:14px }
 
     #tv {
       position:fixed;
@@ -94,37 +53,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       flex-direction:column;
       z-index:9999
     }
-    #player {width:90%;max-width:900px;height:500px}
+    #player { width:90%; max-width:900px; height:500px }
 
-    .controls {
-      margin-top:10px;
-      display:flex;
-      gap:10px;
-    }
+    .controls { margin-top:10px; display:flex; gap:10px; }
     .controls button {
-      background:#e50914;
-      border:none;
-      padding:10px 20px;
-      color:#fff;
-      border-radius:6px;
-      font-size:16px;
-      cursor:pointer
+      background:#e50914; border:none; padding:10px 20px; color:#fff;
+      border-radius:6px; font-size:16px; cursor:pointer
     }
 
-    /* Bloques publicitarios */
-    .ad-block {
-      text-align:center;
-      margin:25px auto;
-    }
+    .ad-block { text-align:center; margin:25px auto; }
   </style>
 </head>
 
 <body>
 
-  <!-- ✅ AMP Auto Ads Activo -->
-  <amp-auto-ads type="adsense"
-                data-ad-client="ca-pub-7859862485920488">
-  </amp-auto-ads>
+  <!-- ✅ AMP Auto Ads -->
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-7859862485920488"></amp-auto-ads>
 
   <header>
     <div class="logo">🎬 Cine Plus TV</div>
@@ -178,22 +122,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const TMDB_KEY = "a75df45f5957e88b88043e6e9558b941";
     let playlist = [], page = 1, index = -1, player;
 
-    // ✅ Video de bienvenida
-    const introVideoId = "8ZcmTl_1ER8"; // <-- cambia por el ID de tu video de intro (YouTube)
+    const introVideoId = "8ZcmTl_1ER8"; // video de intro
 
-    // ✅ Crear reproductor con detección de errores o videos bloqueados
     function onYouTubeIframeAPIReady() {
       player = new YT.Player("player", {
         playerVars: { autoplay: 1, controls: 1, rel: 0, mute: 1, playsinline: 1 },
         events: {
           onReady: () => { play(introVideoId); },
           onStateChange: e => {
-            if (e.data === 0) { // 0 = terminado
-              if (index === -1) { index = 0; playTrailer(playlist[index]); }
-              else { next(); }
+            if (e.data === 0) { // cuando termina un video
+              if (index === -1) { // terminó la intro
+                index = 0;
+                playTrailer(playlist[index]);
+              } else {
+                next(); // pasa al siguiente automáticamente
+              }
             }
           },
-          onError: e => { console.warn("⚠️ Video bloqueado o eliminado, saltando..."); next(); }
+          onError: () => next()
         }
       });
     }
@@ -201,46 +147,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     function play(id) { player.loadVideoById(id); }
     function skip() { next(); }
 
-    // ✅ Cambiar automáticamente al siguiente trailer
     async function next() {
       index++;
-      if (index >= playlist.length - 1) await load();
-      playTrailer(playlist[index]);
+      if (index >= playlist.length) await load();
+      if (playlist[index]) playTrailer(playlist[index]);
     }
 
-    // ✅ Cargar y reproducir trailers desde TMDB
     async function playTrailer(imdb) {
       try {
         const res = await fetch(`https://api.themoviedb.org/3/find/${imdb}?api_key=${TMDB_KEY}&external_source=imdb_id`);
         const data = await res.json();
-        if (!data.movie_results[0]) return next();
+        const movie = data.movie_results[0];
+        if (!movie) return next();
 
-        const movieId = data.movie_results[0].id;
-        const vids = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${TMDB_KEY}`);
+        const vids = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${TMDB_KEY}`);
         const vd = await vids.json();
 
-        const trailer = vd.results.find(x => x.site === "YouTube" && (x.type === "Trailer" || x.type === "Teaser"));
+        const trailer = vd.results.find(x => x.site === "YouTube" && ["Trailer", "Clip", "Featurette"].includes(x.type));
         if (trailer) play(trailer.key);
         else next();
-      } catch (err) {
-        console.error("❌ Error cargando trailer:", err);
+      } catch {
         next();
       }
     }
 
-    // ✅ Cargar catálogo (scroll infinito)
     async function load() {
       try {
         const res = await fetch(`https://www.omdbapi.com/?apikey=${OMDB_KEY}&s=movie&type=movie&page=${page}`);
         const data = await res.json();
         if (data.Response === "True") {
-          data.Search.forEach(m => {
+          data.Search.forEach((m, i) => {
             playlist.push(m.imdbID);
-            const c = document.createElement("div");
-            c.className = "card";
-            c.innerHTML = `<img src="${m.Poster}" alt="${m.Title}"><p>${m.Title}</p>`;
-            c.onclick = () => { index = playlist.indexOf(m.imdbID); playTrailer(m.imdbID); };
-            movies.appendChild(c);
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `<img src="${m.Poster}" alt="${m.Title}"><p>${m.Title}</p>`;
+            card.onclick = () => { index = playlist.indexOf(m.imdbID); playTrailer(m.imdbID); };
+            movies.appendChild(card);
+
+            // 🧩 Insertar anuncios entre scrolls
+            if ((playlist.length + i) % 10 === 0) {
+              const ad = document.createElement("div");
+              ad.className = "ad-block";
+              ad.innerHTML = `
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7859862485920488"
+                     data-ad-slot="8222173088"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>`;
+              movies.appendChild(ad);
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            }
           });
           page++;
         }
@@ -249,40 +206,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     }
 
-    // Activar scroll infinito
-    new IntersectionObserver(e => e[0].isIntersecting && load()).observe(sentinel);
+    new IntersectionObserver(e => e[0].isIntersecting && load(), { threshold: 0.1 }).observe(sentinel);
 
-    // Iniciar al cargar
-    window.onload = async () => {
-      await load();
+    window.onload = async () => { await load(); };
+  </script>
+
+  <!-- HubSpot Cookie Config -->
+  <button type="button" id="hs_show_banner_button"
+    style="background-color:#425b76;border:1px solid #425b76;border-radius:3px;padding:10px 16px;color:#fff;">
+    Configuración de cookies
+  </button>
+  <script>
+    document.getElementById("hs_show_banner_button").onclick = function() {
+      var _hsp = window._hsp = window._hsp || [];
+      _hsp.push(['showBanner']);
     };
   </script>
 
-</body><amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-7859862485920488"
-     data-ad-slot="8222173088"
-     data-auto-format="mcrspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
+</body>
 </html>
 
-<!-- Inicio de fragmento de código de HubSpot -->
-<button type="button" id="hs_show_banner_button"
-style="background-color: #425b76; border: 1px solid #425b76;
-       border-radius: 3px; padding: 10px 16px; text-decoration: none; color: #fff;
-       font-family: inherit; font-size: inherit; font-weight: normal; line-height: inherit;
-       text-align: left; text-shadow: none;"
-onClick="(function(){
-  var _hsp = window._hsp = window._hsp || [];
-  _hsp.push(['showBanner']);
-})()"
->
-Configuración de cookies
-</button>
 
-<!-- Fin de fragmento de código de HubSpot -->
 
 
 
